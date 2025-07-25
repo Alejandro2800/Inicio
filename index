@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redireccionando...</title>
+  <style>
+    :root {
+      --primary-dark-blue: #04155f;
+      --primary-light-blue: #135bdd;
+      --white: #ffffff;
+      --text-light: rgba(255, 255, 255, 0.85);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, var(--primary-dark-blue), var(--primary-light-blue));
+      color: var(--text-light);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .redirect-box {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .spinner {
+      border: 4px solid rgba(255, 255, 255, 0.2);
+      border-top: 4px solid white;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 15px auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    a {
+      color: #fff;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="redirect-box">
+    <div class="spinner"></div>
+    <h1>Redirigiendo...</h1>
+    <p>Serás enviado automáticamente. Si no, haz clic <a id="manualLink" href="https://script.google.com/macros/s/AKfycbyu7At5ANf-OYgHqlzSAbaWEN_fo13-i8mOulBaflHNXm47yj2MBJrCE6ddwUMwlInVsA/exec">aquí</a>.</p>
+  </div>
+
+  <script>
+    const redirectUrl = "https://script.google.com/macros/s/AKfycbyu7At5ANf-OYgHqlzSAbaWEN_fo13-i8mOulBaflHNXm47yj2MBJrCE6ddwUMwlInVsA/exec"; // 🔁 CAMBIA ESTA URL
+
+    document.getElementById("manualLink").href = redirectUrl;
+
+    setTimeout(() => {
+      window.location.href = redirectUrl;
+    }, 2500); // Tiempo antes de redirigir (milisegundos)
+  </script>
+</body>
+</html>
